@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
         let boosterCountInput = document.querySelector("input[name=boosterCount]");
         let emptyArray = [testNameInput, boosterCountInput, testDateInput];
         
-        if (form.rocketType.selectedIndex=="") {
+        if (form.rocketType.selectedIndex==="") {
            alert("Please select a rocket type.");
            event.preventDefault();
         }
@@ -19,12 +19,15 @@ window.addEventListener("load", function() {
            }
         }
 
-        for (let i=0; j<form.windRating.length; j++) {
-            if (form.windRating[j].checked===false) {
+        for (let j=0; j<form.windRating.length; j++) {
+            if (form.windRating[j].checked) {
+                console.log("Success!"); 
+            } else {
                 alert("Please choose a wind rating.");
                 event.preventDefault();
-                
+                break;
+            }
         }
-    }
+    
     });    
 });
